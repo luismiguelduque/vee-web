@@ -61,6 +61,36 @@ const routes = [
         }
       },
     ]
+  },
+  {
+    path: '',
+    component: () => import('../layouts/Full.vue'),
+    children: [
+      {
+        path: '/login',
+        name: 'login',
+        component: () => import('../views/public/Login.vue'),
+        meta: {
+          rule: 'editor'
+        }
+      },
+      {
+        path: '/cuenta-bloqueada',
+        name: 'cuenta-bloqueada',
+        component: () => import('../views/public/CuentaBloqueada.vue'),
+        meta: {
+          rule: 'editor'
+        }
+      },
+      {
+        path: '/cuenta-bloqueada-reporte',
+        name: 'cuenta-bloqueada-reporte',
+        component: () => import('../views/public/CuentaBloqueadaReporte.vue'),
+        meta: {
+          rule: 'editor'
+        }
+      },
+    ]
   }
 ]
 
