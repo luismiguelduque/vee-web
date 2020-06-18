@@ -90,6 +90,14 @@ const routes = [
           rule: 'editor'
         }
       },
+      {
+        path: '/terminos',
+        name: 'terminos',
+        component: () => import('../views/public/Terminos.vue'),
+        meta: {
+          rule: 'editor'
+        }
+      },
     ]
   }
 ]
