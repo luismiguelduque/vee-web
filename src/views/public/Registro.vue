@@ -46,14 +46,16 @@
                             <label class="detail-input" for="direction">Dirección</label>
                             <input class="input-custom" id="direction" type="text"/>
                         </template>
-                        <template>
-                            <label class="detail-input" for="phone">Número teléfonico</label>
-                            <input class="input-custom" id="phone" type="text"/>
-                        </template>
-                        <template>
-                            <label class="detail-input" for="email">Correo electrónico</label>
-                            <input class="input-custom" id="email" type="text"/>
-                        </template>
+                        <div class="d-flex">
+                            <div class="phone">
+                                <label class="detail-input" for="phone">Número teléfonico</label>
+                                <input class="input-custom" id="phone" type="text"/>
+                            </div>
+                            <div class="email">
+                                <label class="detail-input" for="email">Correo electrónico</label>
+                                <input class="input-custom" id="email" type="text"/>
+                            </div>
+                        </div>
                         <template>
                             <label class="detail-input" for="responsible">Persona de contacto a quién referir el correo</label>
                             <input class="input-custom" id="responsible" type="text"/>
@@ -131,7 +133,16 @@
                         </v-row>
                     </v-col>
                     <v-col cols="6" offset="6" class="text-left">
-                        <p>Acepto las <a>condiciones de servicio</a> y la <a>política de privacidad</a> de Vee.</p>
+                        <div class="d-flex justify-space-between">
+                            <p>Acepto las <a>condiciones de servicio</a> y la <a>política de privacidad</a> de Vee.</p>
+                            <v-checkbox
+                                v-model="termsConditions"
+                                color="primary"
+                                value="2"
+                                hide-details
+                                class="term-condition"
+                            ></v-checkbox>
+                        </div>
                         <div class="mt-1">
                             <v-btn depressed large color="primary" width="100%">Registrarse</v-btn>
                         </div>
@@ -173,6 +184,15 @@
     .content-public {
         border-radius: 12px;
 
+        .phone {
+            width: calc(35% - 10px);
+            margin-right: 10px;
+        }
+
+        .email {
+            width: 65%;
+        }
+
         .subtitle {
             font-weight: bold;
             font-size: 1.2rem;
@@ -195,6 +215,11 @@
             width: 100%;
         }
 
+        .term-condition {
+            padding-top: 0;
+            margin-bottom: 0;
+        }
+
         .vue-dropzone {
             background: var(--v-backgroundDark-base);
             border: none;
@@ -202,6 +227,7 @@
             color: initial;
             position: relative;
             padding: 0;
+
             & > .dz-preview {
                 .dz-details {
                     background-color: var(--v-primary-base);
@@ -220,6 +246,7 @@
                     font-size: 0.8rem;
                 }
             }
+
             .dropzone-footer {
                 text-align: left;
                 position: absolute;
