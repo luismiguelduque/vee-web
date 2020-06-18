@@ -17,6 +17,7 @@ export default new Vuetify({
                 error: "#fb244e",
                 success: "#00e676",
                 background: "#ebeff2",
+                backgroundDark: "#d0d7df",
             },
         },
     },

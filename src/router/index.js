@@ -98,6 +98,14 @@ const routes = [
           rule: 'editor'
         }
       },
+      {
+        path: '/registro',
+        name: 'registro',
+        component: () => import('../views/public/Registro.vue'),
+        meta: {
+          rule: 'editor'
+        }
+      },
     ]
   }
 ]
